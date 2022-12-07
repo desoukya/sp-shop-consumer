@@ -42,7 +42,7 @@ const startKafkaConsumer = async () => {
         [messages.TICKET_PENDING]: shopProcessor.processPendingTicket,
         [messages.TICKET_RESERVED]: shopProcessor.processReservedTicket,
       }[messageType];      
-      await processMessage(message);
+      await processMessage(parsedMessage);
 
       // successfully exit
       return Promise.resolve();
