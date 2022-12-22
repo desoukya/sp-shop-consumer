@@ -32,7 +32,7 @@ const startKafkaConsumer = async () => {
 
   // Subscribe consumers to topics
   await consumer.subscribe({ topic, fromBeginning: true });
-  await masterlistConsumer.subscribe({ topic, fromBeginning: true });
+  await masterlistConsumer.subscribe({ topic: masterlistTopic, fromBeginning: true });
 
   // Ticket Sales Message Handler
   await consumer.run({
@@ -81,7 +81,7 @@ const startKafkaConsumer = async () => {
         // process message if there is no validation error
         const validationError = validate.kafkaMasterlistMessage(parsedMessage);
         if (!isEmpty(validationError)) {
-          console.log('cannot process message with validation error:', validationError.message)
+          console.log('cannot process master list message with validation error:', validationError.message)
           return;
         }
 

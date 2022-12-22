@@ -23,5 +23,5 @@ const processMasterlist = async (message) => {
 module.exports = {
   processPendingTicket,
   processReservedTicket,
-  processMasterlist,
+  processCancelledTicket,
 };
