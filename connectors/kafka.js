@@ -22,8 +22,8 @@ const topic = `${process.env.TOPIC_FIFA_TICKET_SALES}-${process.env.ENV}`;
 const masterlistTopic = `${process.env.TOPIC_FIFA_MASTER_LIST}-${process.env.ENV}`;
 
 // Kafka Consumers
-const consumer = kafka.consumer({ groupId: `${process.env.TOPIC_FIFA_TICKET_SALES}-${process.env.ENV}` });
-const masterlistConsumer = kafka.consumer({ groupId: `${process.env.TOPIC_FIFA_MASTER_LIST}-${process.env.ENV}` });
+const consumer = kafka.consumer({ groupId: `${process.env.TICKETS_GROUP_ID}-${process.env.ENV}` });
+const masterlistConsumer = kafka.consumer({ groupId: `${process.env.MASTERLIST_GROUP_ID}-${process.env.ENV}` });
 
 const startKafkaConsumer = async () => {
   // Connect consumers
